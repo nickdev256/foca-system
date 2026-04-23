@@ -1,0 +1,21 @@
+.events .event-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.event-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card h3 {
+  margin-bottom: 10px;
+}

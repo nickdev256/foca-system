@@ -1,0 +1,122 @@
+.members-page,
+.users-page,
+.counseling-page,
+.prayer-page,
+.sermons-page,
+.visitors-page,
+.reports-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 6px 4px 20px;
+}
+
+.members-hero,
+.users-hero,
+.counseling-hero,
+.prayer-hero,
+.sermons-hero,
+.visitors-hero,
+.reports-hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 22px;
+}
+
+.members-hero-text,
+.members-hero-card,
+.members-module-card {
+  background: #fff;
+  border: 1px solid #dbe7f3;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.members-hero-text {
+  padding: 30px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+}
+
+.members-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.members-hero-text h1 {
+  margin: 0 0 14px;
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.members-hero-text p,
+.members-hero-card p {
+  line-height: 1.7;
+  color: #475569;
+}
+
+.members-hero-card {
+  padding: 26px;
+}
+
+.members-hero-card ul {
+  margin-top: 16px;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: #334155;
+}
+
+.members-module-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #dbe7f3;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.members-module-card .entity-module,
+.members-module-card .entity-module-wrapper,
+.members-module-card .module-card,
+.members-module-card .crud-module {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.members-module-card input,
+.members-module-card select,
+.members-module-card textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.members-module-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-module-card th {
+  background: #eff6ff;
+  padding: 14px 12px;
+  text-align: left;
+}
+
+.members-module-card td {
+  padding: 14px 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 992px) {
+  .members-hero {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,77 @@
+.visitors-hero-text,
+.visitors-hero-card,
+.visitors-module-card {
+  background: #fff;
+  border: 1px solid #dbe7f3;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.visitors-hero-text {
+  padding: 30px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+}
+
+.visitors-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.visitors-hero-card,
+.visitors-module-card {
+  padding: 26px;
+}
+
+.visitors-hero-card ul {
+  margin-top: 16px;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.visitors-module-card .entity-module,
+.visitors-module-card .entity-module-wrapper,
+.visitors-module-card .module-card,
+.visitors-module-card .crud-module {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.visitors-module-card input,
+.visitors-module-card select,
+.visitors-module-card textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.visitors-module-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.visitors-module-card th {
+  background: #eff6ff;
+  padding: 14px 12px;
+  text-align: left;
+}
+
+.visitors-module-card td {
+  padding: 14px 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 992px) {
+  .visitors-hero {
+    grid-template-columns: 1fr;
+  }
+}

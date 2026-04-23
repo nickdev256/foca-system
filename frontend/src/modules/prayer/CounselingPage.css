@@ -1,0 +1,319 @@
+/* =========================
+   BASE LAYOUT
+========================= */
+.counseling-page {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 20px;
+  background: #f4f7fb;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* =========================
+   TOP BAR (BACK BUTTON)
+========================= */
+.top-bar {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HERO SECTION (SECURE SYSTEM STYLE)
+========================= */
+.counseling-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 22px;
+  color: white;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* glow */
+.counseling-hero::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  width: 240px;
+  height: 240px;
+  background: rgba(59, 130, 246, 0.25);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+.counseling-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.counseling-hero-text h1 {
+  font-size: 2.2rem;
+  margin: 8px 0;
+  font-weight: 800;
+}
+
+.counseling-hero-text p {
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* =========================
+   STATUS CHIPS (FROM BACKEND)
+========================= */
+.status-chips {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.chip.open {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.chip.ongoing {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.chip.closed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* =========================
+   PRIVATE MODE TOGGLE
+========================= */
+.toggle-row {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-row input {
+  transform: scale(1.1);
+}
+
+/* =========================
+   HERO CARD (SECURE SYSTEM PANEL)
+========================= */
+.counseling-hero-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(12px);
+}
+
+.counseling-hero-card ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+/* =========================
+   SESSION LIST (BACKEND DATA)
+========================= */
+.session-list-section {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e6eef7;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.session-list-section h2 {
+  margin-bottom: 14px;
+}
+
+/* LIST GRID */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* SESSION CARD */
+.session-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f8fbff;
+  border: 1px solid #dbe7f3;
+  transition: 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-2px);
+  background: #f1f7ff;
+}
+
+/* =========================
+   SESSION STATUS (BACKEND DRIVEN)
+========================= */
+.status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status.scheduled {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status.attended {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* =========================
+   TIMELINE (SYSTEM FLOW)
+========================= */
+.timeline-section {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e6eef7;
+}
+
+.timeline-section h2 {
+  margin-bottom: 12px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.step {
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =========================
+   ENTITY MODULE (SECURE INPUTS)
+========================= */
+.counseling-module-section {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e6eef7;
+}
+
+.entity-module input,
+.entity-module textarea,
+.entity-module select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  margin-top: 6px;
+  outline: none;
+}
+
+.entity-module textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.entity-module button {
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.entity-module button:hover {
+  background: #2563eb;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1024px) {
+  .counseling-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .counseling-page {
+    padding: 14px;
+  }
+
+  .counseling-hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}

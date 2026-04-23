@@ -1,0 +1,125 @@
+.member-dashboard {
+  min-height: 100vh;
+  padding: 24px;
+  background: #f4f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= HERO ================= */
+.member-hero {
+  background: linear-gradient(135deg, #16376b, #9d2f34);
+  color: white;
+  padding: 32px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.member-hero h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.member-hero p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* ================= SECTIONS ================= */
+.member-section {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border: 1px solid #e6ecf5;
+}
+
+.member-section h2 {
+  margin-bottom: 14px;
+  color: #16376b;
+  font-size: 1.2rem;
+}
+
+/* ================= EVENT + ANNOUNCEMENT CARDS ================= */
+.card {
+  background: #f9fbff;
+  border: 1px solid #e3eaf5;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: #f1f6ff;
+}
+
+.card strong {
+  color: #16376b;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ================= INPUTS ================= */
+textarea,
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #d6deea;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #16376b;
+  box-shadow: 0 0 0 3px rgba(22, 55, 107, 0.1);
+}
+
+/* ================= BUTTONS ================= */
+button {
+  margin-top: 12px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #16376b, #244b86);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* ================= PRAYER / COUNSELING / GIVING BLOCKS ================= */
+.member-section textarea {
+  min-height: 110px;
+  resize: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .member-dashboard {
+    padding: 16px;
+  }
+
+  .member-hero {
+    padding: 22px;
+  }
+
+  .member-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}

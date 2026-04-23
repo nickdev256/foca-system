@@ -1,0 +1,151 @@
+/* PAGE */
+.page {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO */
+.ministry-hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: white;
+  background: linear-gradient(to bottom, #000000b3, #000000cc),
+              url("https://images.unsplash.com/photo-1507692049790-de58290a4334");
+  background-size: cover;
+  background-position: center;
+  animation: zoomBg 20s ease-in-out infinite alternate;
+}
+
+.ministry-hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #fff, #bbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ministry-hero p {
+  max-width: 600px;
+  margin: auto;
+  color: #ddd;
+}
+
+/* STATEMENT */
+.ministry-statement {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #111, #1a1a1a);
+  color: white;
+}
+
+.ministry-statement h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.ministry-statement p {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+}
+
+/* GRID */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 80px 40px;
+  background: #f8f8f8;
+}
+
+/* CARD */
+.ministry-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.4s;
+  border: 1px solid #eee;
+}
+
+.ministry-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.verse {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.ministry-card h3 {
+  margin: 10px 0;
+}
+
+.ministry-card p {
+  color: #555;
+}
+
+/* BUTTON */
+.join-btn {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+}
+
+.join-btn::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  background: black;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.join-btn:hover::after {
+  width: 100%;
+}
+
+/* FINAL */
+.ministry-final {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.main-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: black;
+  color: white;
+  border-radius: 30px;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes zoomBg {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ministry-hero h1 {
+    font-size: 2.2rem;
+  }
+}

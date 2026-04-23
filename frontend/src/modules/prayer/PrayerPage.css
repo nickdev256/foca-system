@@ -1,0 +1,161 @@
+/* =========================
+   PRAYER PAGE BASE
+========================= */
+.prayer-page {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 20px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.prayer-hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  padding: 28px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* glow effect */
+.prayer-hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: rgba(59, 130, 246, 0.25);
+  filter: blur(90px);
+  border-radius: 50%;
+}
+
+.prayer-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.prayer-hero h1 {
+  font-size: 2.2rem;
+  margin: 8px 0 10px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.prayer-hero p {
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 12px;
+}
+
+.prayer-hero ul {
+  margin-top: 10px;
+  padding-left: 18px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* =========================
+   MODULE SECTION HEADER
+========================= */
+.prayer-module-section {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e6eef7;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.prayer-module-section h2 {
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+  color: #0f172a;
+  position: relative;
+  padding-left: 12px;
+}
+
+.prayer-module-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 4px;
+  height: 18px;
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+/* =========================
+   ENTITY MODULE (GLOBAL IMPROVEMENT)
+   Works with your CRUD component
+========================= */
+.entity-module {
+  background: #f8fbff;
+  border: 1px solid #dbe7f3;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* form inputs (if inside EntityModule) */
+.entity-module input,
+.entity-module textarea,
+.entity-module select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d0e2f2;
+  outline: none;
+  transition: 0.2s ease;
+  margin-top: 6px;
+  background: white;
+}
+
+.entity-module input:focus,
+.entity-module textarea:focus,
+.entity-module select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* buttons inside module */
+.entity-module button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.entity-module button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .prayer-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .prayer-page {
+    padding: 14px;
+  }
+}
