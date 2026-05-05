@@ -61,13 +61,13 @@ const allowedOrigins = [
   process.env.CLIENT_URL,  // deployed frontend
 ];
 
-
 app.use(
   cors({
-    origin: true,   // ✅ allow any origin (for now)
+    origin: true,
     credentials: true,
   })
 );
+
 /* =======================
    BODY PARSING
 ======================= */
