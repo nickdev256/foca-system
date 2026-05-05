@@ -61,17 +61,24 @@ const allowedOrigins = [
   process.env.CLIENT_URL,  // deployed frontend
 ];
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  process.env.CLIENT_URL,
+];
+
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow requests with no origin (mobile apps, postman)
+      // allow requests without origin (Postman, mobile apps)
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
-      } else {
-        return callback(new Error("❌ Not allowed by CORS"));
       }
+
+      console.log("❌ Blocked by CORS:", origin);
+      return callback(null, false); // 🔥 IMPORTANT (no error thrown)
     },
     credentials: true,
   })
