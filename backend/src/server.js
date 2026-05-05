@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 /* =======================
    🔥 LOAD ENV (MUST BE FIRST)
 ======================= */
-dotenv.config({ path: "./.env" });
+dotenv.config();
 
 import express from "express";
 import cors from "cors";
@@ -16,10 +16,16 @@ import { fileURLToPath } from "url";
 import { connectDB } from "./config/db.js";
 
 /* =======================
-   DEBUG ENV (VERY IMPORTANT)
+   DEBUG ENV
 ======================= */
-console.log("🔐 OPENAI KEY:", process.env.OPENAI_API_KEY ? "FOUND ✅" : "MISSING ❌");
-console.log("🗄️ MONGO URI:", process.env.MONGO_URI ? "FOUND ✅" : "MISSING ❌");
+console.log(
+  "🔐 OPENAI KEY:",
+  process.env.OPENAI_API_KEY ? "FOUND ✅" : "MISSING ❌"
+);
+console.log(
+  "🗄️ MONGO URI:",
+  process.env.MONGO_URI ? "FOUND ✅" : "MISSING ❌"
+);
 
 /* =======================
    PATH FIX (ES MODULES)
@@ -28,7 +34,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /* =======================
-   ENSURE UPLOADS FOLDER EXISTS
+   ENSURE UPLOADS FOLDER
 ======================= */
 const uploadsPath = path.join(__dirname, "uploads");
 
@@ -47,9 +53,26 @@ const app = express();
 ======================= */
 app.use(helmet());
 
+/* =======================
+   CORS (FIXED FOR DEV + PROD)
+======================= */
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  process.env.CLIENT_URL,  // deployed frontend
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      // allow requests with no origin (mobile apps, postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("❌ Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
@@ -95,7 +118,7 @@ app.get("/", (req, res) => {
 });
 
 /* =======================
-   ROUTES IMPORT
+   ROUTES
 ======================= */
 import authRoutes from "./routes/authRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
@@ -105,11 +128,11 @@ import newsletterRoutes from "./routes/newsletterRoutes.js";
 import superAdminRoutes from "./routes/superAdminRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
 
-// CUSTOM
+// custom
 import prayerRoutes from "./routes/prayerRoutes.js";
 import counselingRoutes from "./routes/counselingRoutes.js";
 
-// GENERIC
+// generic
 import {
   announcementsRouter,
   attendanceRouter,
@@ -125,17 +148,13 @@ import {
 /* =======================
    MAIN ROUTES
 ======================= */
-
-// 🔐 Auth
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
-// 🔥 Custom
 app.use("/api/prayer", prayerRoutes);
 app.use("/api/counseling", counselingRoutes);
 app.use("/api/ai", aiRoutes);
 
-// 📦 CRUD
 app.use("/api/users", usersRouter);
 app.use("/api/members", membersRouter);
 app.use("/api/visitors", visitorsRouter);
@@ -146,12 +165,10 @@ app.use("/api/announcements", announcementsRouter);
 app.use("/api/finance", financeRouter);
 app.use("/api/attendance", attendanceRouter);
 
-// 📊 Other
 app.use("/api/budget-requests", budgetRequestRoutes);
 app.use("/api/newsletter", newsletterRoutes);
 app.use("/api/super-admin", superAdminRoutes);
 
-// 🌍 Public
 app.use("/api", publicRoutes);
 
 /* =======================
@@ -168,7 +185,7 @@ app.use((req, res) => {
    GLOBAL ERROR HANDLER
 ======================= */
 app.use((err, req, res, next) => {
-  console.error("🔥 SERVER ERROR:", err);
+  console.error("🔥 SERVER ERROR:", err.message);
 
   res.status(err.status || 500).json({
     success: false,
@@ -184,9 +201,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     console.log("⏳ Connecting to database...");
-
     await connectDB();
-
     console.log("✅ Database connected successfully");
 
     app.listen(PORT, () => {
